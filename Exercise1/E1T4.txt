@@ -1,0 +1,7 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+The EC2 instance, part of Web Services, should be situated within a private subnet to restrict its communication exclusively to port 5000, which will only accept traffic from the Application Load Balancer. This setup ensures it does not directly interact with other internet endpoints.   
+
+# Poor practice 2
+Security Groups within the VPC are configured to permit all inbound and outbound traffic.

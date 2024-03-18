@@ -1,0 +1,17 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+1. The IAM policy currently grants comprehensive administrative privileges, which is not in line with the least privilege principle.
+2. Multi-factor authentication (MFA) has not been activated for the root user account.
+3. The CloudTrail is not defined for all regions, which is necessary for comprehensive monitoring.
+4. The Application Load Balancer is not set up to convert HTTP requests into HTTPS.
+5. The VPC Security Groups are configured to permit all traffic, inbound and outbound, contrary to AWS's security guidelines.
+6. The EC2 instance has its TCP port 5000 exposed to the public internet.
+7. Logging for the S3 bucket is not operational.
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+1. IAM policies should not allow full "*" administrative privile    ges, review IAM policies and remove any unnecessary or overly broad permissions, limit the permissions of the role to the minimum required for its function.
+2. As the root user possesses unrestricted access within the AWS account, it's highly advised to secure the account by activating multi-factor authentication (MFA).
+3. Set up a CloudTrail with S3 storage, ensuring it captures activity across all regions.
+4. Adjust the Application Load Balancer settings to ensure HTTP requests are automatically upgraded to the more secure HTTPS, which encrypts data using TLS (SSL) to thwart interception and tampering.
+5. Default VPC Security Groups should be configured to restrict traffic, permitting only what is necessary for your resources and avoiding open rules that allow access from any IP address.
+6. On the EC2 instance, close all ports that are not in use and adhere to secure protocols like HTTPS (port 443) or SSH (port 22), utilizing SSL certificates or SSH keys for encryption.
+7. Enable logging for S3 buckets to aid in operational and security troubleshooting, customer behavior analysis, and clarification of S3 billing details.
