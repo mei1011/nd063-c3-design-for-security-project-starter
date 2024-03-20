@@ -1,0 +1,25 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+Checkov:  An open-source tool that scans cloud infrastructure configurations to find misconfigurations before they're deployed.
+Terraform: It's not only for provisioning but also has the ability to validate and preview changes to the infrastructure.
+
+### Example vulnerability
+Misconfigured network access controls
+Access logs not enabled to resources that support it
+
+## Scan AMI’s or containers for OS vulnerabilities
+Amazon Inspector: An automated service that scans AWS workloads for software vulnerabilities and unintended network exposure.
+Anchore: An open-source project for deep analysis of docker images.
+
+### Example vulnerability
+Outdated Software Packages
+Weak or Default Passwords
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+AWS Config: Provides continuous monitoring, assessment, and recording of the resource configurations in your AWS environment.
+Intruder: A modern vulnerability scanner designed to work seamlessly with major cloud providers.
+
+### Example vulnerability
+Overly Permissive IAM Policies
+An IAM role assigned a policy that allows admin access
